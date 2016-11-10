@@ -69,7 +69,7 @@ angular.module('app.weather', ['ngRoute'])
                         $scope.coords[1]+"&APPID=c108e430cb627416aaf1c2807a944e25",
                         true);
                     xhr.onreadystatechange =function(){
-                        output.innerHTML = "show";
+
                         if(xhr.readyState==4){
                             var status=xhr.status;
                             if((status>=200 && status<300)|| status==304){
