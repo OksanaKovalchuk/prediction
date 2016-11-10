@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="container-fluid">
+        <div class="row ">
+            <div class="text-center">
+                <h1 class="header-padding">Get the weather!</h1>
+                <div class="around">
+                    <div class="input-group col-lg-4">
+                            <input type="text" name="city" ng-model="citychange"
+                                   id="city" class="form-control" placeholder="Type the name of the city">
+                        <span class="input-group-addon"  ng-style="{'visibility': citychange ? 'visible' : 'hidden'}"
+                              ng-click="citychange=null">
+                             <i class="glyphicon glyphicon-remove"
+                                title="click to cancel your choice"></i>
+                        </span>
+                    </div>
+
+                </div>
+                <br>
+                <br>
+                <div id="local"></div>
+                <br>
+                <div ng-show="showBoolean" class="container-fluid">
+                    <p>
+                        {{weatherList.name}},
+                        {{weatherList.sys.country}}:
+                        {{(weatherList.main.temp-273.15)}}&#176; C,
+                        {{weatherList.weather[0].description}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
