@@ -1,10 +1,12 @@
-body {
+.grad {
     background: #E0E0DD; /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(left, lightblue , #dff7d4); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(right, lightblue, #dff7d4); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(right, lightblue, #dff7d4); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to right, lightblue , #dff7d4)/* Standard syntax */ !important;
-    z-index: 10;
+    background: linear-gradient(to right, lightblue , #dff7d4)/* Standard syntax */
+}
+body{
+    background-color: #80b0e0 !important;
 }
 .header-padding{
     padding-top: 100px;

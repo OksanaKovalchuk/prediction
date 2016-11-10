@@ -69,14 +69,12 @@ angular.module('app.weather', ['ngRoute'])
                         $scope.coords[1]+"&APPID=c108e430cb627416aaf1c2807a944e25",
                         true);
                     xhr.onreadystatechange =function(){
+                        output.innerHTML = "show";
                         if(xhr.readyState==4){
                             var status=xhr.status;
                             if((status>=200 && status<300)|| status==304){
-                                // console.log(JSON.parse(xhr.responseText));
                                 $scope.showLocal = true;
-                                console.log($scope.showLocal);
                                 $scope.weatherLocal= JSON.parse(xhr.responseText);
-                                console.log($scope.weatherLocal.city.name);
                                 var city = new XMLHttpRequest();
                                 city.open(
                                     "get",
@@ -89,7 +87,6 @@ angular.module('app.weather', ['ngRoute'])
                                         var citystatus = city.status;
                                         if ((citystatus >= 200 && citystatus < 300) || citystatus == 304) {
                                             $scope.new = JSON.parse(city.responseText);
-                                            console.log($scope.new);
                                             output.innerHTML =
                                                 "<div ng-show='showLocal' class='container-fluid'> <p>" +
                                                 $scope.new.name + ",  " +
